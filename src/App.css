@@ -1,0 +1,19 @@
+.app {
+  /* background-image: url("./bgImg.jpg"); */
+  /* background-color: rgb(202, 233, 245); */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: rgb(85, 84, 84);
+  background-image: linear-gradient(
+    to top,
+    #ffffff,
+    #e8f1ff,
+    #bee7ff,
+    #80e1ff,
+    #12daeb
+  );
+  font-weight: 400;
+}
+
+/* #2b2730 */
