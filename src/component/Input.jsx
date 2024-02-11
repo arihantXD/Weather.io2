@@ -51,7 +51,7 @@ function Input() {
             e.target.value && getSuggestions(e.target.value);
         }}
         placeholder="Ex. London"
-        className="w-[100%] md:w-[calc(70%-75px)] bg-transparent border-b-[1px] border-[#ffff] placeholder:text-[#fff] outline-none pl-[55px] text-5xl"
+        className="w-[100%] md:w-[calc(70%-75px)] bg-transparent border-b-[1px] border-[#ffff] placeholder:text-[#fff] outline-none pl-[55px]  text-5xl"
       />
       <Button text="Search" func={input ? getCords : null} />
     </div>
