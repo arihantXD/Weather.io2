@@ -11,7 +11,7 @@ function Input() {
   function getCords() {
     axios
       .get(
-        `http://api.openweathermap.org/geo/1.0/direct?q=${input}&limit=3&appid=${
+        `https://api.openweathermap.org/geo/1.0/direct?q=${input}&limit=3&appid=${
           import.meta.env.VITE_API_KEY
         }`
       )
@@ -26,7 +26,7 @@ function Input() {
   function getSuggestions(e) {
     axios
       .get(
-        `http://api.openweathermap.org/geo/1.0/direct?q=${e}&limit=3&appid=${
+        `https://api.openweathermap.org/geo/1.0/direct?q=${e}&limit=3&appid=${
           import.meta.env.VITE_API_KEY
         }`
       )
