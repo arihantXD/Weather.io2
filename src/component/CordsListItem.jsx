@@ -9,7 +9,9 @@ function CordsListItem({ cord }) {
   function getWeather() {
     axios
       .get(
-        `https://api.openweathermap.org/data/2.5/weather?lat=${cord.lat}&lon=${cord.lon}&appid=e557481084fc0cc85a72ecf9a82a085a&units=metric`
+        `https://api.openweathermap.org/data/2.5/weather?lat=${cord.lat}&lon=${
+          cord.lon
+        }&appid=${import.meta.env.VITE_API_KEY}&units=metric`
       )
       .then((res) => {
         setWeather(() => res.data);
@@ -17,7 +19,9 @@ function CordsListItem({ cord }) {
 
     axios
       .get(
-        `https://api.openweathermap.org/data/2.5/forecast?lat=${cord.lat}&lon=${cord.lon}&appid=e557481084fc0cc85a72ecf9a82a085a&units=metric`
+        `https://api.openweathermap.org/data/2.5/forecast?lat=${cord.lat}&lon=${
+          cord.lon
+        }&appid=${import.meta.env.VITE_API_KEY}&units=metric`
       )
       .then((res) => {
         setWeatherForecast(() => res.data.list);

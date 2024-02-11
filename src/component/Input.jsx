@@ -11,7 +11,9 @@ function Input() {
   function getCords() {
     axios
       .get(
-        `http://api.openweathermap.org/geo/1.0/direct?q=${input}&limit=3&appid=e557481084fc0cc85a72ecf9a82a085a`
+        `http://api.openweathermap.org/geo/1.0/direct?q=${input}&limit=3&appid=${
+          import.meta.env.VITE_API_KEY
+        }`
       )
       .then((res) => {
         setCords(() => res.data);
@@ -24,7 +26,9 @@ function Input() {
   function getSuggestions(e) {
     axios
       .get(
-        `http://api.openweathermap.org/geo/1.0/direct?q=${e}&limit=3&appid=e557481084fc0cc85a72ecf9a82a085a`
+        `http://api.openweathermap.org/geo/1.0/direct?q=${e}&limit=3&appid=${
+          import.meta.env.VITE_API_KEY
+        }`
       )
       .then((res) => {
         setSuggestion(() => res.data);
@@ -51,7 +55,7 @@ function Input() {
             e.target.value && getSuggestions(e.target.value);
         }}
         placeholder="Ex. London"
-        className="w-[100%] md:w-[calc(70%-75px)] bg-transparent border-b-[1px] border-[#ffff] placeholder:text-[#fff] outline-none pl-[55px]  text-5xl"
+        className="w-[100%] md:w-[calc(70%-75px)] bg-transparent border-b-[1px] border-[#ffff] placeholder:text-[#fff] outline-none pl-[55px] text-5xl"
       />
       <Button text="Search" func={input ? getCords : null} />
     </div>
